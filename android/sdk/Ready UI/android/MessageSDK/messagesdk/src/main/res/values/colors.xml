@@ -1,0 +1,26 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="cometchat_dark_green">#002832</color>
+    <color name="cometchat_grey">#7b7b7b</color>
+
+    <color name="login_background">#FFFFFF</color>
+
+    <color name="login_text">#555555</color>
+    <color name="login_text_hint">#CCCCCC</color>
+
+    <color name="login_button">#002832</color>
+    <color name="login_button_text">#FFFFFF</color>
+
+    <color name="colorPrimary">#002832</color>
+    <color name="colorPrimaryDark">#000000</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="no_background">#00000000</color>
+
+    <color name="chat_background">#f8f8f8</color>
+    <color name="black_font_color">#202020</color>
+    <color name="tw__transparent">#00000000</color>
+    <color name="color_icon">#8e8e92</color>
+    <color name="light_grey">#E0E0E0</color>
+</resources>

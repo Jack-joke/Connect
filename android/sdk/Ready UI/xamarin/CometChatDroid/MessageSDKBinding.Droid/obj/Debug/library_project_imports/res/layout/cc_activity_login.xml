@@ -1,0 +1,122 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cc_rounded_corners"
+        >
+
+        <ScrollView
+            android:id="@+id/scrollviewParentLoginContainer"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLoginContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
+
+                <EditText
+                    android:id="@+id/editTextUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:hint="@string/username_hint"
+                    android:inputType="text"
+                    android:maxWidth="300dp"
+                    android:minWidth="250dp"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/login_text"
+                    android:textColorHint="@color/login_text_hint"
+                    android:textCursorDrawable="@null"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/editTextPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password_hint"
+                        android:inputType="textPassword"
+                        android:maxWidth="300dp"
+                        android:minWidth="250dp"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/login_text"
+                        android:textColorHint="@color/login_text_hint"
+                        android:textCursorDrawable="@null"/>
+
+
+                    <CheckBox
+                        android:id="@+id/checkBoxRemember"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/editTextPassword"
+                        android:layout_below="@id/editTextPassword"
+                        android:layout_marginTop="10dp"
+                        android:button="@drawable/cc_custom_login_checkbox_selector"
+                        android:checked="true"
+                        android:text="@string/remember_me_text"
+                        android:textColor="@color/login_text"/>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/buttonLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/cc_custom_button_selector"
+                    android:maxWidth="300dp"
+                    android:minWidth="250dp"
+                    android:text="@string/login_button_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/login_button_text"/>
+
+
+                <ProgressBar
+                    android:id="@+id/progressWheel"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/imageViewBottomBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/cc_ic_custom_back_arrow"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageViewWhiteLabbledCometchatLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_preview"
+            android:maxHeight="@dimen/app_logo_height"
+            android:maxWidth="@dimen/app_logo_width"
+            android:src="@drawable/cc_logo_login"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+</RelativeLayout>

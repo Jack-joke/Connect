@@ -1,0 +1,47 @@
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <title>SDK plugin</title>
+</head>
+<body>
+<div class="app">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Readyui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+
+     app.initialize();
+     function launchCometChatUI()
+     {
+        Readyui.launchCometChat();
+     }
+
+     function chatwithme(userid){
+        Readyui.chatWithMe(userid)
+     }
+
+     function onDeviceReady() {
+         // console.log("Device ready");
+     }
+     document.addEventListener("deviceready", onDeviceReady, false);
+
+    </script>
+
+    <center>
+        <button id="cometchat" class ="buttons" title="" onclick="launchCometChatUI()">Launch CometChat</button>
+        <br>
+        <button id="chatwithme" class ="buttons" title="" onclick="chatwithme(16)">Chatwithme</button>
+    </center>
+    <p>
+    </p>
+
+</body>
+</html>

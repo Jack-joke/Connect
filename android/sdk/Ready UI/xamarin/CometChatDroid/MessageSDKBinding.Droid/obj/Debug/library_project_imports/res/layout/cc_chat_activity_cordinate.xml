@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    tools:context="com.inscripts.activities.SingleChatActivity"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include layout="@layout/cc_activity_chat"/>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical"
+        android:background="@color/tw__transparent"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+        <include
+            layout="@layout/cc_custom_bottom_sheet_menu"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/bottom_sheet_camera"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:background="@drawable/cc_rounded_border_edittext"
+        android:layout_above="@+id/linearLayoutFooter"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="#f8f8f8"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:id="@+id/custom_bottom_sheet_camera_menu"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_capture_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:padding="10dp" >
+
+                    <ImageView
+                        android:id="@+id/camera_menu_capture_photo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="image"
+                        android:padding="10dp"
+                        android:background="@drawable/cc_custom_menu_button_background"
+                        android:drawableTint="#FFF"
+                        android:src="@drawable/cc_ic_camera" />
+
+                    <TextView
+                        android:id="@+id/textCapturePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_toRightOf="@+id/camera_menu_capture_photo"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#787878"
+                        android:textSize="18sp"
+                        android:text="Capture Photo" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_capture_video"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:padding="10dp" >
+
+                    <ImageView
+                        android:id="@+id/camera_menu_capture_video"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="image"
+                        android:background="@drawable/cc_custom_menu_button_background"
+                        android:padding="10dp"
+                        android:src="@drawable/cc_ic_video_call" />
+
+                    <TextView
+                        android:id="@+id/textCaptureVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_toRightOf="@+id/camera_menu_capture_video"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#787878"
+                        android:textSize="18sp"
+                        android:text="Capture Video" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_select_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="visible"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <include layout="@layout/cc_custom_chat_room_select_color_menu"/>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

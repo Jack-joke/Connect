@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="10dp">
+
+
+    <com.inscripts.custom.RoundedImageView
+        android:id="@+id/imageViewShowUserAvatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:padding="5dp"
+        android:src="@drawable/default_avatar" />
+
+    <TextView
+        android:id="@+id/textViewChatroomMemberName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/imageViewShowUserAvatar"
+        android:text="@string/username_hint"
+        android:textColor="@color/black_font_color"
+        android:textSize="17sp"
+        android:maxLines="1"
+        android:fontFamily="sans-serif"
+        android:ellipsize="end"/>
+
+
+</RelativeLayout>

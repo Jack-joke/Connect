@@ -1,0 +1,14 @@
+.inputboxes{
+    height: 30px;
+     margin:0px 0px 10px 0px;
+     font-size:20px;
+     width:100%;
+}
+.buttons{
+    width:200px !important;
+    height:30px;
+    font-size:16px;
+    color: #FFF;
+    background-color: #4CAF50;
+    margin:0px 0px 10px 0px;
+}

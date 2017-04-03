@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1068565243808",
+    "firebase_url": "https://ccapp-00001.firebaseio.com",
+    "project_id": "ccapp-00001",
+    "storage_bucket": "ccapp-00001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068565243808:android:f56a58be06667525",
+        "android_client_info": {
+          "package_name": "inscripts.com.librarytestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068565243808-e3167qnr4v47ss3tmrt2g48k8pqb1ba8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASE8m93U7gdVz232fWr7hAeFkz1c1P--4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

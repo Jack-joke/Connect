@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:wheel="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/tools"
+                android:layout_margin="20dp"
+                android:background="@drawable/cc_rounded_corners"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ToolBarStyle"
+        app:elevation="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutCreateChatroomContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:layout_below="@+id/toolbar"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="40dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_chatrroom_name"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:theme="@style/TextLabel"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_chatroom_name"
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:layout_height="wrap_content"
+                android:hint="Name" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_chatroom_type"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/input_layout_chatrroom_name"
+            android:layout_marginTop="20dp"
+            android:theme="@style/TextLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:focusable="false"
+                android:hint="Type"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:theme="@style/TextLabel"
+            android:layout_below="@+id/input_layout_chatroom_type"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_hint" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/relativeLayoutCreateChatroomContainer"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/btn_text_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCLE"
+            android:textSize="17sp"
+            android:padding="15dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_toLeftOf="@+id/buttonCreateChatroom"
+            />
+
+        <Button
+            android:id="@+id/buttonCreateChatroom"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/cc_create_button_background"
+            android:text="@string/create"
+            android:padding="10dp"
+            android:elevation="10dp"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif-medium"
+            android:textAllCaps="false"
+            android:textColor="@color/login_button_text"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

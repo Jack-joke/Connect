@@ -1,0 +1,190 @@
+buildscript {
+
+    ext {
+        CUSTOM_PACKAGE_NAME = ""
+        CUSTOM_VERSION_CODE = ""
+        CUSTOM_VERSION_NAME = ""
+        CUSTOM_APP_NAME = ""
+        SITE_URL = ""
+        CUSTOM_PACKAGE_SCHEMA = ""
+        CUSTOM_DEEP_URL = ""
+
+
+        KEYSTORE_WHITE_LABELLED = "../../builder/whitelabel.keystore"
+        W_ALIAS = "cc_alias"
+        W_PASSWORD = "cometchat"
+
+        KEYSTORE_STOCK_APP = "../../builder/stockapp.keystore"
+        S_ALIAS = "tidev"
+        S_PASSWORD = "tirocks"
+    }
+
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+def initializeProperties() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('./app/src/main/assets/config.properties').newDataInputStream())
+    CUSTOM_PACKAGE_NAME = properties.getProperty('PACKAGE_NAME')
+    CUSTOM_VERSION_CODE = properties.getProperty('VERSION_CODE').toInteger()
+    CUSTOM_VERSION_NAME = properties.getProperty('VERSION_NAME')
+    CUSTOM_APP_NAME = properties.getProperty('APP_NAME')
+    CUSTOM_PACKAGE_SCHEMA = properties.getProperty('DEEP_LINK_SCHEMA')
+    CUSTOM_DEEP_URL = properties.getProperty('CUSTOM_DEEP_URL')
+    SITE_URL = properties.getProperty('SITE_URL')
+}
+
+def replacePermissionPackageInManifest() {
+    String contents = new File('./app/src/main/AndroidManifest.xml').getText('UTF-8')
+    contents = contents.replaceFirst('(<!-- REGEX1 -->)[^&]*(<!-- REGEX1_END -->)', '<!-- REGEX1 --><permission android:name="' + CUSTOM_PACKAGE_NAME + '.permission.C2D_MESSAGE" android:protectionLevel="signature" /><!-- REGEX1_END -->');
+    contents = contents.replaceFirst('(<!-- REGEX2 -->)[^&]*(<!-- REGEX2_END -->)', '<!-- REGEX2 --><uses-permission android:name="' + CUSTOM_PACKAGE_NAME + '.permission.C2D_MESSAGE" /><!-- REGEX2_END -->');
+    contents = contents.replaceFirst('(<!-- REGEX3 -->)[^&]*(<!-- REGEX3_END -->)', '<!-- REGEX3 --><category android:name="' + CUSTOM_PACKAGE_NAME + '" /><!-- REGEX3_END -->');
+    new File('./app/src/main/AndroidManifest.xml').write(contents, 'UTF-8')
+}
+
+def replaceAppName() {
+    String contents = new File('./app/src/main/res/values/strings.xml').getText('UTF-8')
+    contents = contents.replaceFirst('(<!-- APP_NAME -->)[^&]*(<!-- APP_NAME_END -->)', '<!-- APP_NAME --><string name="app_name">' + CUSTOM_APP_NAME + '</string><!-- APP_NAME_END -->')
+    new File('./app/src/main/res/values/strings.xml').write(contents, 'UTF-8')
+    if (SITE_URL?.trim()) {
+        contents = contents.replaceFirst('(<!-- DEEP_LINK -->)[^&]*(<!-- DEEP_LINK_END -->)', '<!-- DEEP_LINK --><string name="deep_link_url">' + CUSTOM_DEEP_URL + '</string><!-- DEEP_LINK_END -->')
+        new File('./app/src/main/res/values/strings.xml').write(contents, 'UTF-8')
+        contents = contents.replaceFirst('(<!-- DEEP_LINK_SCHEMA -->)[^&]*(<!-- DEEP_LINK_SCHEMA_END -->)', '<!-- DEEP_LINK_SCHEMA --><string name="deep_link_schema">' + CUSTOM_PACKAGE_SCHEMA + '</string><!-- DEEP_LINK_SCHEMA_END -->')
+        new File('./app/src/main/res/values/strings.xml').write(contents, 'UTF-8')
+    }
+
+
+}
+
+def getKeyStorePath() {
+    if (SITE_URL?.trim()) {
+        return KEYSTORE_WHITE_LABELLED
+    } else {
+        return KEYSTORE_STOCK_APP
+    }
+}
+
+def getKeyStoreAlias() {
+    if (SITE_URL?.trim()) {
+        return W_ALIAS
+    } else {
+        return S_ALIAS
+    }
+}
+
+def getKeyStorePassword() {
+    if (SITE_URL?.trim()) {
+        return W_PASSWORD
+    } else {
+        return S_PASSWORD
+    }
+}
+
+def getCustomApplicationId() {
+    initializeProperties()
+    replacePermissionPackageInManifest()
+    replaceAppName()
+    return CUSTOM_PACKAGE_NAME
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25'
+
+    useLibrary 'org.apache.http.legacy'
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "2048M"
+    }
+
+    defaultConfig {
+        applicationId getCustomApplicationId()
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode CUSTOM_VERSION_CODE
+        versionName CUSTOM_VERSION_NAME
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(getKeyStorePath())
+            storePassword getKeyStorePassword()
+            keyAlias getKeyStoreAlias()
+            keyPassword getKeyStorePassword()
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile('com.crashlytics.sdk.android:crashlytics:2.2.3@aar') {
+        transitive = true;
+    }
+    compile('com.twitter.sdk.android:twitter:1.3.2@aar') {
+        transitive = true;
+    }
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.pnikosis:materialish-progress:1.5'
+    compile 'com.facebook.android:facebook-android-sdk:3.20.0'
+    compile 'com.google.android.gms:play-services-plus:9.0.0'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'org.apache.httpcomponents:httpcore:4.3.2'
+    compile 'org.apache.httpcomponents:httpmime:4.3.3'
+    compile 'org.jsoup:jsoup:1.8.1'
+    compile 'com.pubnub:pubnub-android:3.7.2'
+    compile 'com.splitwise:tokenautocomplete:1.3.3'
+    compile 'com.mcxiaoke.volley:library:1.0.17'
+    compile 'com.github.clans:fab:1.6.2'
+    compile 'com.commit451:PhotoView:1.2.4'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.tubb.smrv:swipemenu-recyclerview:5.2.1'
+    compile 'com.google.firebase:firebase-messaging:9.0.0'
+    compile 'com.google.firebase:firebase-ads:9.0.0'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+}
+
+apply plugin: 'com.google.gms.google-services'

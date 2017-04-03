@@ -1,0 +1,8 @@
+<resources>
+
+    <dimen name="phone_number_spineer_width">260dp</dimen>
+
+    <dimen name="emoji_size">60dp</dimen>
+    <dimen name="sticker_size">86dp</dimen>
+
+</resources>

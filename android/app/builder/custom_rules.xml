@@ -1,0 +1,70 @@
+<project>
+
+	<import file="crashlytics-ant/crashlytics_build.xml"/>
+
+	<target name="-pre-clean" >
+		<antcall target="rename-for-new-package" />
+		<antcall target="replace-push-keys" />
+	</target>
+
+	<target name="-pre-build" >
+		<antcall target="set-version-using-file" />
+	</target>
+
+	<target name="set-version-using-file">
+	<!-- Load properties from "custom_build.properties" file -->
+		<property file="custom_build.properties" />
+
+		<property name="new.package.dir" value="src/com/inscripts/cometchat/" />
+		<property name="old.package.dir" value="src/com/whatsapp/chat/" />
+
+		<replaceregexp file="AndroidManifest.xml" match="android:versionCode(.*)"
+			replace='android:versionCode="${Version.Code}"'/>
+		<replaceregexp file="AndroidManifest.xml" match="android:versionName(.*) "
+			replace='android:versionName="${Version.Name}"'/>
+	</target>
+
+	 <target name="rename-for-new-package">
+	<!-- Load properties from "custom_build.properties" file -->
+		<property file="custom_build.properties" />
+
+		<!-- Replaces all of the references to the old package name in files in the "src" directory -->
+		   <replace dir="src" value="${New.Package.Name}" token="${Old.Package.Name}" summary="true" />
+
+		<replaceregexp file="./src/com/inscripts/factories/URLFactory.java"
+		match="String SITE_URL (.*)"
+		replace='String SITE_URL = "${Site.URL}";'/>
+
+		<replace dir="src" value='String USER_REGISTRATION_LINK = ""' token='String USER_REGISTRATION_LINK = ""' summary="true" />
+		<replace dir="src" value='LOGGER_TAG = "${New.Package.Name}"' token='LOGGER_TAG = "com.inscripts.cometchat"' summary="true" />
+
+		<!-- Using 'replace' and not 'replaceregexp' because the token contains double quotes -->
+		<replace dir="res" value='name="app_name">"${APP.Name}"' token='name="app_name">CometChat' summary="true" />
+
+		   <move toDir="${New.Package.Folder}">
+		       <fileset dir="${Old.Package.Folder}"/>
+		   </move>
+
+		   <!-- replaces the package name in the manifest -->
+		   <replace file="AndroidManifest.xml" value="${New.Package.Name}" token="${Old.Package.Name}" summary="true"/>
+	</target>
+
+	<target name="replace-push-keys">
+		<!-- Load properties from "custom_build.properties" file -->
+		<property file="../builder/parse.properties" />
+
+		<replaceregexp file="./src/com/inscripts/cc/plugins/PushNotificationsManager.java"
+			match="String PARSE_APP_ID(.*)"
+			replace='String PARSE_APP_ID = "${PARSE_APP_ID}";'/>
+		<replaceregexp file="./src/com/inscripts/cc/plugins/PushNotificationsManager.java"
+			match="String PARSE_CLIENT_ID(.*)"
+			replace='String PARSE_CLIENT_ID = "${PARSE_CLIENT_ID}";'/>
+		<replaceregexp file="./res/layout/activity_splash_screen.xml"
+			match='android:background="#3b5998"'
+			replace='android:background="${SPLASH_BG_COLOR}"' />
+					<replaceregexp file="./src/com/inscripts/factories/URLFactory.java"
+			match="String USER_REGISTRATION_LINK(.*)"
+			replace='String USER_REGISTRATION_LINK = "${REGISTER_LINK}";'/>
+	</target>
+
+</project>

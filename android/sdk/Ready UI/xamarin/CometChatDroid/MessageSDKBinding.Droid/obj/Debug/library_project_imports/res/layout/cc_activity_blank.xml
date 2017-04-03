@@ -1,0 +1,19 @@
+<RelativeLayout
+    android:id="@+id/abcd"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000"
+
+    >
+
+    <ProgressBar
+        android:id="@+id/progressWheel"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+﻿<metadata>
+	<!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+
+
+  -->
+    <attr path="/api/package[@name='com.inscripts.videochat']/class[@name='IncomingCallActivity']/field[@name='incomingCallActivity']" name="managedName">InCallActivity</attr>
+    <attr path="/api/package[@name='com.inscripts.videochat']/class[@name='OutgoingCallActivity']/field[@name='outgoingCallActivity']" name="managedName">OutCallActivity</attr>
+    <attr path="/api/package[@name='com.inscripts.videochat']/class[@name='VideoChatActivity']/field[@name='videoChatActivity']" name="managedName">Activity</attr>
+    <attr path="/api/package[@name='com.inscripts.activities']/class[@name='BlankActivity']/field[@name='blankActivity']" name="managedName">BlankAct</attr>
+
+    <remove-node path="/api/package[starts-with (@name, 'org.bouncycastle')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.parse')]" />
+    <remove-node path="/api/package[starts-with (@name, 'fm')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.google')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.pubnub')]" />
+    <remove-node path="/api/package[starts-with (@name, 'org.apache')]" />
+    <remove-node path="/api/package[starts-with (@name, 'org.jsoup')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.tokenautocomplete')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.android.volley')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.squareup')]" />
+    <remove-node path="/api/package[starts-with (@name, 'com.astuetz')]" />
+    <remove-node path="/api/package[starts-with (@name, 'okio')]" />
+
+    <remove-node path="/api/package[@name='com.inscripts.helpers']/class[@name='FileDownloadHelper']" />
+    <remove-node path="/api/package[@name='com.inscripts.helpers']/class[@name='FileUploadHelper']" />
+    <remove-node path="/api/package[@name='com.inscripts.utils']/class[@name='AsyncTaskContactRetrieve']" />
+
+</metadata>

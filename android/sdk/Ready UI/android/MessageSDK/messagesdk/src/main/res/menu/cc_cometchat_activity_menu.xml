@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/custom_action_search"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="@string/action_search"
+        yourapp:actionViewClass="android.support.v7.widget.SearchView"
+        yourapp:showAsAction="always"/>
+
+    <item
+        android:id="@+id/custom_compose"
+        android:title="Compose"
+        android:icon="@drawable/cc_compose_floating"
+        yourapp:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/custom_setting"
+        android:title="More"
+        android:icon="@drawable/cc_more_settings"
+        yourapp:showAsAction="always" />
+<!--
+    <item
+        android:id="@+id/custom_action_create_chatroom"
+
+        android:title="@string/create_chatroom"
+        yourapp:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/custom_action_unblock_user"
+
+        android:title="@string/unblock_user"
+        yourapp:showAsAction="collapseActionView">
+    </item>-->
+
+</menu>

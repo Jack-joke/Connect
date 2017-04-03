@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+    <dimen name="keyboard_height">140dp</dimen>
+    <dimen name="profile_margin">15dp</dimen>
+
+    <!-- Emoji TextView -->
+    <dimen name="emoji_size">20dip</dimen>
+
+</resources>

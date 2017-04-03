@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <TextView
+        android:id="@+id/textViewNoBlockUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/no_blocked_users"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutUnblockUserFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/buttonCancelUnblock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight=".5"
+            android:background="@drawable/login_button_alternative_selector"
+            android:text="@string/cancel_invite_users"
+            android:textAllCaps="false"
+            android:textColor="@color/login_button_text" />
+
+        <Button
+            android:id="@+id/buttonUnblockUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".5"
+            android:background="@drawable/login_button_alternative_selector"
+            android:text="@string/unblock_button_text"
+            android:textAllCaps="false"
+            android:textColor="@color/login_button_text" />
+    </LinearLayout>
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressWheel"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        wheel:matProg_barColor="@color/login_button"
+        wheel:matProg_progressIndeterminate="true" />
+
+    <ListView
+        android:id="@+id/listViewBlockedUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/LinearLayoutUnblockUserFooter"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/textViewNoBlockUser"
+        android:layout_centerHorizontal="true"
+        android:overScrollFooter="@android:color/transparent" />
+
+</RelativeLayout>

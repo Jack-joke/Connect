@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cc_rounded_corners"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ToolBarStyle"
+            app:elevation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            />
+
+        <LinearLayout
+            android:id="@+id/relativeLayoutInviteUserFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/buttonCancelInvite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight=".5"
+                android:background="@drawable/cc_login_button_alternative_selector"
+                android:text="@string/cancel_invite_users"
+                android:textAllCaps="false"
+                android:textColor="@color/login_button_text"/>
+
+            <Button
+                android:id="@+id/buttonInviteUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight=".5"
+                android:background="@drawable/cc_login_button_alternative_selector"
+                android:text="@string/invite"
+                android:textAllCaps="false"
+                android:textColor="@color/login_button_text"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextInviteSMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeLayoutInviteUserFooter"
+            android:layout_below="@+id/inviteSMSSearch"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/cc_send_sms_edit_text_bg"
+            android:gravity="left"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:padding="8dp"
+            android:scrollHorizontally="false"/>
+
+        <TextView
+            android:id="@+id/textViewInviteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/inviteSMSSearch"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/toolbar"
+            android:layout_alignTop="@+id/inviteSMSSearch"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            android:gravity="center"
+            android:text="@string/invite_label"/>
+
+        <com.inscripts.custom.ContactsCompletionView
+            android:id="@+id/inviteSMSSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_toRightOf="@+id/textViewInviteLabel"
+            android:completionThreshold="1"/>
+
+        <ProgressBar
+            android:id="@+id/progressWheel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

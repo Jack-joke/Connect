@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_background"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutNoUsersMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textViewNoUsersMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/no_users_available"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+   <!-- <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:id="@+id/List_of_users"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fastScrollEnabled="true"
+        android:footerDividersEnabled="false"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:overScrollFooter="@android:color/transparent"/>-->
+
+
+        <com.tubb.smrv.SwipeMenuRecyclerView
+            android:id="@+id/List_of_users"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fastScrollEnabled="true"
+            android:footerDividersEnabled="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:overScrollFooter="@android:color/transparent"/>
+
+
+    <!--<View
+        android:id="@+id/shadowView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2FFFFFF"
+        android:visibility="gone" />-->
+
+    <!--<com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fabMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        fab:menu_icon="@drawable/new_message_30"
+        app:menu_colorNormal="#002832"
+        app:menu_colorPressed="#002832"
+        app:menu_colorRipple="#002832"
+        app:menu_labels_colorRipple="#002832"
+        app:menu_fab_size="normal"
+        android:visibility="gone"
+        app:menu_labels_colorNormal="#cc0c0c0d">
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabNewVideoChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="2dp"
+            android:src="@drawable/new_videocall"
+            app:fab_colorNormal="#002832"
+            app:fab_colorPressed="#002832"
+            app:fab_colorRipple="#002832"
+            app:fab_size="mini"
+            app:fab_label="New Video Chat" />
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabNewBroadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_broadcast_icon_24dp"
+            app:fab_colorNormal="#002832"
+            app:fab_colorPressed="#002832"
+            app:fab_colorRipple="#002832"
+            app:fab_size="mini"
+            app:fab_label="Broadcast" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabSinglePlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_games_icon"
+            app:fab_colorNormal="#002832"
+            app:fab_colorPressed="#002832"
+            app:fab_colorRipple="#002832"
+            app:fab_size="mini"
+            app:fab_label="New Chat" />
+
+    </com.github.clans.fab.FloatingActionMenu>-->
+
+    <!--<com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fabMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        fab:menu_icon="@drawable/new_message_60"
+        app:menu_colorNormal="#002832"
+        app:menu_colorPressed="#002832"
+        app:menu_colorRipple="#002832"
+        app:menu_labels_colorRipple="#002832"
+        app:menu_fab_size="normal"
+        app:menu_labels_colorNormal="#cc0c0c0d"
+        >
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabNewBroadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_broadcast_icon_24dp"
+            app:fab_colorNormal="#002832"
+            app:fab_colorPressed="#002832"
+            app:fab_colorRipple="#002832"
+            app:fab_size="mini"
+            app:fab_label="Broadcast"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabSinglePlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_games_icon"
+            app:fab_colorNormal="#002832"
+            app:fab_colorPressed="#002832"
+            app:fab_colorRipple="#002832"
+            app:fab_size="mini"
+            app:fab_label="Games"
+
+            />
+    </com.github.clans.fab.FloatingActionMenu>-->
+
+
+</RelativeLayout>

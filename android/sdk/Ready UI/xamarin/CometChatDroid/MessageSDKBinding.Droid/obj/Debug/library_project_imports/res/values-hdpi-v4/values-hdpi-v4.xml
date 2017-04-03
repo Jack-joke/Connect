@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="emoji_size">35dp</dimen>
+    <dimen name="in_message_emoji_size">35dp</dimen>
+    <dimen name="sticker_size">64dp</dimen>
+    <string name="emoji_size_actual">35</string>
+</resources>

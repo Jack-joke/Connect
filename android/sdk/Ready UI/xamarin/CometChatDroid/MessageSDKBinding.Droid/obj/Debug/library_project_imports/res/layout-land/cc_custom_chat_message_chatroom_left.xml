@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.inscripts.custom.RoundedImageView
+        android:id="@+id/imageViewUserAvatar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/linearLayoutChatroomMessageLeftContainer"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"
+        android:src="@drawable/cc_default_avatar"/>
+
+    <View
+        android:id="@+id/leftArrow"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBottom="@+id/linearLayoutChatroomMessageLeftContainer"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/imageViewUserAvatar"
+        android:background="@drawable/cc_message_arrow_left"
+        android:focusable="false"
+        android:rotation="270" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayoutChatroomMessageLeftContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/leftArrow"
+        android:background="@drawable/cc_custom_left_bubble"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/textViewChatroomSenderNameLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="@string/sender_name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewChatroomSenderNameLeft">
+
+            <com.inscripts.custom.EmojiTextView
+                android:id="@+id/textViewChatroomMessageLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:maxWidth="270dp"
+                android:text="@string/message"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutAudioNoteContainer"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imageViewPlayIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/cc_play"/>
+
+                <TextView
+                    android:id="@+id/textViewTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:text="00:00"/>
+
+                <SeekBar
+                    android:id="@+id/seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/textViewTime"
+                    android:layout_toRightOf="@id/imageViewPlayIcon"/>
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/imageViewChatroomImageMessageLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewChatroomMessageLeft"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image_preview"
+                android:maxHeight="370dp"
+                android:maxWidth="370dp"
+                android:src="@drawable/cc_thumbnail_default"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imageViewChatroomVideoMessageLeft"
+                android:layout_width="370dp"
+                android:layout_height="226dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image_preview"
+                android:scaleType="fitXY"
+                android:src="@drawable/cc_thumbnail_default"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imageViewChatroomVideoMessageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image_preview"
+                android:maxHeight="50dp"
+                android:maxWidth="50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/cc_download_video_button"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progressWheelVideo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewChatroomMessageTimestampLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutChatroomMessageLeftContainer"
+        android:layout_alignLeft="@id/linearLayoutChatroomMessageLeftContainer"
+        android:layout_marginTop="2dp"
+        android:text="@string/time_stamp"
+        android:textColor="#bbb"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

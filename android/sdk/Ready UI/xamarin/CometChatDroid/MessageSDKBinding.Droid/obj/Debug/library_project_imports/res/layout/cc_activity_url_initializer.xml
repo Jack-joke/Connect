@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cc_rounded_corners">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ToolBarStyle"
+            app:elevation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            />
+
+        <Button
+            android:id="@+id/buttonDemoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/cc_custom_button_selector"
+            android:maxWidth="300dp"
+            android:minWidth="250dp"
+            android:text="@string/login_button_text"
+            android:textAllCaps="false"
+            android:textColor="@color/login_button_text"
+            android:visibility="visible"/>
+
+        <EditText
+            android:id="@+id/editTextURL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttonDemoLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/url_field_text"
+            android:inputType="textUri"
+            android:maxWidth="300dp"
+            android:minWidth="250dp"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            android:visibility="visible"/>
+
+        <ProgressBar
+            android:id="@+id/progressWheel"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/buttonDemoLogin"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</RelativeLayout>

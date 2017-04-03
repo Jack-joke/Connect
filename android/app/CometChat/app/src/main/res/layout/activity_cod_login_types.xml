@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/imageViewCometchatLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_preview"
+        android:maxHeight="@dimen/app_logo_height"
+        android:maxWidth="@dimen/app_logo_width"
+        android:src="@drawable/logo_login"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_selector"
+        android:maxWidth="300dp"
+        android:minWidth="250dp"
+        android:text="@string/login_button_text"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/login_button_text"
+        android:textSize="14sp"
+        android:layout_marginBottom="5sp" />
+
+    <Button
+        android:id="@+id/buttonLoginAsGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_guest_login"
+        android:background="@drawable/login_button_alternative_selector"
+        android:maxWidth="300dp"
+        android:minWidth="250dp"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="0sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textAllCaps="false"
+        android:textColor="@color/login_button"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/imageViewBottomBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/ic_custom_back_arrow" />
+
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.inscripts"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="24" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="DATABASE"
+            android:value="inscripts_cc.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="false" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.inscripts.models" />
+
+        <activity
+            android:name="com.inscripts.activities.UrlInitializerActivity"
+            android:theme="@style/materilbaseTheme" />
+        <activity
+            android:name="com.inscripts.activities.LoginActivity"
+            android:theme="@style/materilbaseTheme" />
+        <activity
+            android:name="com.inscripts.activities.CometChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/materilbaseTheme" />
+        <activity
+            android:name="com.inscripts.activities.ChatSettingsActivity"
+            android:theme="@style/materilbaseTheme" />
+        <activity
+            android:name="com.inscripts.activities.UnblockuserActivity"
+            android:theme="@style/materilbaseTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.SingleChatActivity"
+            android:parentActivityName="com.inscripts.activities.CometChatActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.ImagePreviewActivity"
+            android:theme="@style/Theme.FullscreeTransperent" />
+        <activity
+            android:name="com.inscripts.activities.ChatroomActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.CreateChatroomActivity"
+            android:theme="@style/materilbaseTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ChatroomActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.ShowChatroomUsersActivity"
+            android:theme="@style/materilbaseTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ChatroomActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.InviteUserActivity"
+            android:theme="@style/materilbaseTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ChatroomActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.videochat.IncomingCallActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.inscripts.videochat.OutgoingCallActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:name="com.inscripts.videochat.VideoChatActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity android:name="com.inscripts.activities.InviteAVBroadcastUsers" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".videochat.VideoChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.InviteViaSmsActivity"
+            android:theme="@style/materilbaseTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.BlankActivity"
+            android:label="@string/title_activity_blank"
+            android:theme="@style/materilbaseTheme" >
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.WhiteboardActivity"
+            android:label="@string/title_activity_blank"
+            android:theme="@style/materilbaseTheme" >
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.WriteBoardActivity"
+            android:label="@string/title_activity_blank"
+            android:theme="@style/materilbaseTheme" >
+        </activity>
+        <activity android:name="com.inscripts.activities.HandwriteActivity" />
+        <activity
+            android:name="com.inscripts.activities.ViewUserProfileActivity"
+            android:parentActivityName="com.inscripts.activities.CometChatActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.SettingActivity"
+            android:parentActivityName="com.inscripts.activities.CometChatActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.StatusMessageActivity"
+            android:parentActivityName="com.inscripts.activities.SettingActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.SelectLanguageActivity"
+            android:parentActivityName="com.inscripts.activities.SettingActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.SinglePlayerGameActivity"
+            android:parentActivityName="com.inscripts.activities.SettingActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.BroadcastMessageActivity"
+            android:parentActivityName="com.inscripts.activities.CometChatActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.BotDetailActivity"
+            android:parentActivityName="com.inscripts.activities.CometChatActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.activities.AnnouncementActivity"
+            android:parentActivityName="com.inscripts.activities.SettingActivity"
+            android:theme="@style/materilbaseTheme"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SingleChatActivity" />
+        </activity>
+    </application>
+
+</manifest>

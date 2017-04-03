@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/custom_action_search"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/search"
+        android:title="@string/action_search"
+        yourapp:actionViewClass="android.support.v7.widget.SearchView"
+        yourapp:showAsAction="always"/>
+   
+
+    <item
+        android:id="@+id/custom_notification"
+        android:title="notification"
+        android:icon="@drawable/notification_bell"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/custom_setting"
+        android:title="new message"
+        android:icon="@drawable/more_settings"
+        yourapp:showAsAction="always" />
+    <item
+        android:id="@+id/add_group"
+        android:title="Create group"
+        android:icon="@drawable/add_groups"
+        yourapp:showAsAction="always"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/custom_action_create_chatroom"
+        android:showAsAction="collapseActionView"
+        android:title="@string/create_chatroom"
+        yourapp:showAsAction="collapseActionView"
+        android:visible="false"/>
+    <item
+        android:id="@+id/custom_action_unblock_user"
+        android:showAsAction="collapseActionView"
+        android:title="@string/unblock_user"
+        yourapp:showAsAction="collapseActionView"
+        android:visible="false">
+    </item>
+    <item
+        android:id="@+id/custom_action_refresh_buddylist"
+        android:showAsAction="collapseActionView"
+        android:title="@string/refresh_list"
+        yourapp:showAsAction="collapseActionView"
+        android:visible="false"/>
+
+</menu>

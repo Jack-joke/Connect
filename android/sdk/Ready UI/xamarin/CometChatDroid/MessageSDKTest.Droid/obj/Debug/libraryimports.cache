@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <ManifestDocuments>
+    <ManifestDocument>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\aapt\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
+  <NativeLibraries>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\arm64-v8a\libopus.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\arm64-v8a\libopusJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\arm64-v8a\libvpx.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\arm64-v8a\libvpxJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libaudioprocessing.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libaudioprocessingJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libopus.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libopusJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libvpx.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\armeabi-v7a\libvpxJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\x86\libopus.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\x86\libopusJNI.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\x86\libvpx.so</NativeLibrary>
+    <NativeLibrary>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jni\x86\libvpxJNI.so</NativeLibrary>
+  </NativeLibraries>
+  <Jars>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\bolts-android-1.4.0.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\bolts-tasks-1.4.0.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\gson-2.3.1.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\httpclient-4.2.5.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\httpcore-4.3.2.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\httpmime-4.3.3.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\jsoup-1.8.1.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\okhttp-2.7.5.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\okio-1.8.0.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\Parse-1.13.0.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\picasso-2.5.2.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\tokenautocomplete-2.0.7.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\volley.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\bin\classes.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.icelink.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.icelink.webrtc.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.icelink.websync.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.websync.chat.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.websync.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\fm.websync.subscribers.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\MessageSDKBinding.Droid\library_project_imports\libs\pubnub-android-3.7.2.jar</Jar>
+  </Jars>
+</Paths>

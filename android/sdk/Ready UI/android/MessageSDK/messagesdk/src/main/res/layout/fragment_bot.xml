@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cc_rounded_corners"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutbotsMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textViewNoBotMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/no_bots_available"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+
+
+        <ListView
+            android:id="@+id/list_of_bots"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fastScrollEnabled="true"
+            android:footerDividersEnabled="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:overScrollFooter="@android:color/transparent"/>
+
+
+</RelativeLayout>

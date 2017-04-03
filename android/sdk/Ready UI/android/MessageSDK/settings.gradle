@@ -1,0 +1,1 @@
+include ':messagesdk', ':swipemenu-recyclerview-5.2.1'

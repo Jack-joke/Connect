@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('swipemenu-recyclerview-5.2.1.aar'))

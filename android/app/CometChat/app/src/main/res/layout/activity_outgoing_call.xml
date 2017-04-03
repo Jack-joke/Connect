@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+                android:background="@color/tw__solid_white"
+   >
+
+    <TextView
+        android:id="@+id/textViewOutgoingPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.inscripts.custom.ProfileRoundedImageView
+        android:id="@+id/imageViewOutgoingProfilePicture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_tab_one_on_one" />
+
+
+    <TextView
+        android:id="@+id/textViewOutgoingCallerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/imageViewOutgoingProfilePicture"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black_font_color"
+        android:textSize="25sp"
+        android:text="@string/username_hint" />
+
+
+    <TextView
+        android:id="@+id/textViewCallingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewOutgoingCallerName"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:text="@string/calling_user" />
+
+
+
+    <ImageButton
+        android:id="@+id/buttonCancelCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:padding="12dp"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:rotation="136"
+        android:src="@drawable/ic_phone_call"
+        android:background="@drawable/chatroom_background" />
+
+
+    <ImageButton
+        android:id="@+id/buttonSpeaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:padding="12dp"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_volume_control"
+        android:background="@drawable/chatroom_background" />
+
+
+
+</RelativeLayout>

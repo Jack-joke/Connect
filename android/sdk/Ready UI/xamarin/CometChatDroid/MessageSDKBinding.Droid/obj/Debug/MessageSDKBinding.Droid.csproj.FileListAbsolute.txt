@@ -1,0 +1,10 @@
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\MessageSDKBinding.Droid.dll
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\MessageSDKBinding.Droid.pdb
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\Xamarin.Android.Support.v4.dll
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\obj\Debug\MessageSDKBinding.Droid.dll
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\obj\Debug\MessageSDKBinding.Droid.pdb
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\obj\Debug\MessageSDKBinding.Droid.dll.mdb
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\MessageSDKBinding.Droid.dll.mdb
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\obj\Debug\MessageSDKBinding.Droid.dll.mdb
+D:\gitrepo\cometchat-app\client\android\sdk\Ready UI\xamarin\CometChatDroid\MessageSDKBinding.Droid\bin\Debug\MessageSDKBinding.Droid.dll.mdb

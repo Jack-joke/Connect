@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+                android:background="@color/tw__solid_white"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ImageButton
+        android:id="@+id/buttonAnswerCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/ic_phone_call"
+        android:padding="12dp"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:background="@drawable/chatroom_background"/>
+
+    <ImageButton
+        android:id="@+id/buttonRejectCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_phone_call"
+        android:rotation="136"
+        android:padding="12dp"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:background="@drawable/chatroom_background"/>
+
+    <ImageButton
+        android:id="@+id/buttonSpeaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_volume_control"
+        android:background="@drawable/chatroom_background" />
+
+
+    <TextView
+        android:id="@+id/textViewIncomingText"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.inscripts.custom.ProfileRoundedImageView
+        android:id="@+id/imageViewBuddyProfilePicture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        android:layout_alignRight="@+id/buttonAnswerCall"
+        android:layout_alignLeft="@+id/buttonRejectCall"
+        android:maxWidth="180dp"
+        android:src="@drawable/ic_tab_one_on_one" />
+
+    <TextView
+        android:id="@+id/textViewCallPlaceholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCallerName"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:text="@string/incoming_call" />
+
+    <TextView
+        android:id="@+id/textViewCallerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/imageViewBuddyProfilePicture"
+        android:layout_centerHorizontal="true"
+        android:text="@string/username_hint"
+        android:textColor="@color/black_font_color"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MessageSDK.iml" filepath="$PROJECT_DIR$/MessageSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/messagesdk/messagesdk.iml" filepath="$PROJECT_DIR$/messagesdk/messagesdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipemenu-recyclerview-5.2.1/swipemenu-recyclerview-5.2.1.iml" filepath="$PROJECT_DIR$/swipemenu-recyclerview-5.2.1/swipemenu-recyclerview-5.2.1.iml" />
+    </modules>
+  </component>
+</project>

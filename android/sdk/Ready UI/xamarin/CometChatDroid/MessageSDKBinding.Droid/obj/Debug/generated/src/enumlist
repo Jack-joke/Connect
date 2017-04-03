@@ -1,0 +1,5 @@
+com.inscripts.enums.ChatroomType:Com.Inscripts.Enums:ChatroomType
+com.inscripts.enums.Languages:Com.Inscripts.Enums:Languages
+com.inscripts.enums.StatusOption:Com.Inscripts.Enums:StatusOption
+com.orm.query.Condition$Check:Com.Orm.Query:Condition.Check
+com.orm.query.Condition$Type:Com.Orm.Query:Condition.Type

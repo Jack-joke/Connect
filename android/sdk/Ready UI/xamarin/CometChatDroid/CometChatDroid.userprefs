@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{3CA76EC9-067B-4FEB-9753-D24180FE8282}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MessageSDKTest.Droid\MainActivity.cs">
+    <Files>
+      <File FileName="MessageSDKTest.Droid\MainActivity.cs" Line="13" Column="2" />
+      <File FileName="MessageSDKBinding.Droid\Properties\AssemblyInfo.cs" Line="11" Column="32" />
+      <File FileName="MessageSDKBinding.Droid\packages.config" Line="5" Column="12" />
+      <File FileName="MessageSDKTest.Droid\Resources\values\Strings.xml" Line="1" Column="1" />
+      <File FileName="MessageSDKTest.Droid\packages.config" Line="9" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MessageSDKTest.Droid PreferredExecutionTarget="Android.1871da5f" />
+</Properties>

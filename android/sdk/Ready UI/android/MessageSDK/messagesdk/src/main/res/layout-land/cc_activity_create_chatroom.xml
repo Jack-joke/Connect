@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cc_rounded_corners"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:elevation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ToolBarStyle"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutCreateChatroomContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/textViewChatroomType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/textViewChatroomName"
+                android:layout_below="@id/textViewChatroomName"
+                android:layout_marginBottom="22dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/chatroom_type"/>
+
+            <Spinner
+                android:id="@+id/spinnerChatroomType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editTextChatroomName"
+                android:layout_alignRight="@+id/editTextChatroomName"
+                android:layout_below="@+id/editTextChatroomName"
+                android:layout_marginTop="20dp"
+                android:entries="@array/chatroom_type_array"
+                android:prompt="@string/chatroom_type_select_prompt"/>
+
+            <TextView
+                android:id="@+id/textViewChatroomPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewChatroomType"
+                android:layout_toLeftOf="@+id/editTextChatroomName"
+                android:text="@string/password_hint"/>
+
+            <EditText
+                android:id="@+id/editTextChatroomPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textViewChatroomPassword"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/textViewChatroomPassword"
+                android:ems="10"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/editTextChatroomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewChatroomName"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/textViewChatroomName"
+                android:ems="10"
+                android:inputType="text">
+
+                <requestFocus/>
+            </EditText>
+
+            <TextView
+                android:id="@+id/textViewChatroomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/name_text"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCreateChatroomFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight=".5"
+                android:background="@drawable/cc_login_button_alternative_selector"
+                android:text="@string/cancel_invite_users"
+                android:textAllCaps="false"
+                android:textColor="@color/login_button_text"/>
+
+            <Button
+                android:id="@+id/buttonCreateChatroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/cc_login_button_alternative_selector"
+                android:text="@string/create"
+                android:textAllCaps="false"
+                android:textColor="@color/login_button_text"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressWheel"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/linearLayoutCreateChatroomFooter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</RelativeLayout>

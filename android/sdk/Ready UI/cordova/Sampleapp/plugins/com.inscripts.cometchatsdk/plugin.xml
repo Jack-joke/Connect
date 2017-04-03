@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.inscripts.cometchatsdk"
+    version="0.2.12">
+    <name>CometChat SDK</name>
+    <description>The CometChat plugin to integrate chat in your app</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,cometchat</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/Readyui.js" name="Readyui">
+        <clobbers target="Readyui" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Readyui" >
+                <param name="android-package" value="Readyui"/>
+            </feature>
+        </config-file>
+       <source-file src="src/android/Readyui.java" target-dir="src/" />
+        <framework src="src/android/readyui.gradle" custom="true" type="gradleReference" />
+
+        <resource-file src="libs/cometchat-sdk.aar" target="libs/cometchat-sdk.aar" />
+    </platform>
+
+</plugin>

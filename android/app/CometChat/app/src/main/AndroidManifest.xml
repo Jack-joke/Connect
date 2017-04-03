@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.inscripts.activities">
+
+    <uses-sdk tools:overrideLibrary="com.tokenautocomplete.example" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony.cdma"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony.gsm"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.portrait"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- Don't remove the REGEX comments. They are used by the build script. -->
+    <!-- REGEX1 --><permission android:name="com.inscripts.cometchat.permission.C2D_MESSAGE" android:protectionLevel="signature" /><!-- REGEX1_END -->
+
+
+    <!-- REGEX2 --><uses-permission android:name="com.inscripts.cometchat.permission.C2D_MESSAGE" /><!-- REGEX2_END -->
+    <application
+        android:name=".CCApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="inscripts_cc.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="7" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="false" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.inscripts.models" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <!--
+            <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        -->
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="@string/deep_link_url"
+                    android:pathPrefix="/cometchat_checkmobileapp.php"
+                    android:scheme="@string/deep_link_schema" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UrlInitializerActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_url_initializer"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_login"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity
+            android:name=".SocialAuthActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_social_auth_only"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="Facebook Login" />
+        <activity
+            android:name=".CometChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/materilbaseTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="application/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="OPEN_COMETCHAT_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SingleChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".CometChatActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".ChatroomActivity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".CometChatActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".ImagePreviewActivity"
+            android:label="@string/activity_profile_title"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.FullscreeTransperent" />
+        <activity
+            android:name=".CreateChatroomActivity"
+            android:label="@string/create_chatroom"
+            android:launchMode="singleTask"
+            android:parentActivityName=".CometChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".InviteUserActivity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".ChatroomActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name="com.inscripts.videochat.VideoChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_video_chat"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.inscripts.videochat.IncomingCallActivity"
+            android:label="@string/title_activity_video_chat_popup"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.inscripts.videochat.OutgoingCallActivity"
+            android:label="@string/title_activity_outgoing_call"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="fc1bdfd19d2b0be3282f9adcbad59d2ed9fb221c" />
+
+        <service
+            android:name="com.parse.PushService"
+            android:enabled="true" />
+
+        <service android:name="com.inscripts.services.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.inscripts.services.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.inscripts.heartbeats.RecentSyncService" android:enabled="true"/>
+
+        <service android:enabled="true" android:name="com.inscripts.services.OflineMessagesService" />
+
+        <service android:enabled="true" android:name="com.inscripts.services.FileUploadService"/>
+
+        <receiver
+            android:name="com.inscripts.receivers.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.inscripts.plugins.PushNotificationsManager"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <!-- REGEX3 --><category android:name="com.inscripts.cometchat" /><!-- REGEX3_END -->
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".UnblockuserActivity"
+            android:label="@string/title_activity_unblockuser"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".InviteViaSmsActivity"
+            android:label="@string/title_activity_invite_via_sms"
+            android:parentActivityName=".CometChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".PhoneNumberActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CreateProfileActivity"
+            android:label="@string/title_activity_createProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VerificationActivity"
+            android:label="@string/title_activity_verficiation"
+            android:parentActivityName=".PhoneNumberActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.PhoneNumberActivity" />
+        </activity>
+        <activity
+            android:name=".SelectCountryActivity"
+            android:label="@string/title_activity_select_country" />
+        <activity
+            android:name=".ShowChatroomUsersActivity"
+            android:label="@string/title_activity_show_chatroom_users"
+            android:parentActivityName=".ChatroomActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.ChatroomActivity" />
+        </activity>
+        <activity
+            android:name=".ViewUserProfileActivity"
+            android:label="@string/title_activity_view_user_profile"
+            android:parentActivityName=".SingleChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name=".GuestLoginActivity"
+            android:label="@string/title_activity_guest_login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ChatSettingsActivity"
+            android:label="@string/title_activity_notification_settings"
+            android:parentActivityName=".SettingActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".CoDLoginActivity"
+            android:label="@string/title_activity_cod_login"
+            android:parentActivityName=".UrlInitializerActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.UrlInitializerActivity" />
+        </activity>
+        <activity
+            android:name=".WallpaperActivity"
+            android:label="Wallpaper">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".BroadcastMessageActivity"
+            android:label="@string/title_activity_broadcast_message"
+            android:parentActivityName=".CometChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.CometChatActivity" />
+        </activity>
+        <activity
+            android:name=".InviteAVBroadcastUsers"
+            android:label="@string/title_activity_invite_avbroadcast_users"
+            android:parentActivityName="com.inscripts.videochat.VideoChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.videochat.VideoChatActivity" />
+        </activity>
+        <activity
+            android:name=".WhiteboardActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_whiteboard"
+            android:launchMode="singleTask"
+            android:parentActivityName=".SingleChatActivity"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.inscripts.activities.SingleChatActivity" />
+        </activity>
+        <activity
+            android:name=".SinglePlayerGameActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_single_player_game"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".WriteBoardActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_write_board"
+            android:launchMode="singleTask"
+            android:parentActivityName=".SingleChatActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".CoDLoginTypesActivity" />
+        <activity
+            android:name=".UnbanChatroomUserActivity"
+            android:label="@string/title_activity_unban_chatroom_user"
+            android:parentActivityName=".ChatroomActivity" />
+        <activity
+            android:name=".HandwriteActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:parentActivityName=".CometChatActivity" />
+        <activity
+            android:name=".StatusMessageActivity"
+            android:label="@string/title_activity_status_message"
+            android:parentActivityName=".ViewProfileActivity" />
+
+        <activity
+            android:name=".SelectLanguageActivity"
+            android:label="@string/title_activity_select_language"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".UrlInitializerActivityNew"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AnnouncementActivity"
+            android:label="Annoucements"
+            android:parentActivityName=".CometChatActivity" />
+        <activity
+            android:name=".BotDetailActivity"
+            android:label="BOT DETAILS"
+            android:parentActivityName=".CometChatActivity" />
+            android:parentActivityName=".CometChatActivity" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Register"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".ViewProfileActivity"
+            android:label="@string/profile_title"
+            android:parentActivityName=".SettingActivity" />
+
+        <service
+            android:name="com.inscripts.avatarServices.AvatarService"
+            android:exported="false" />
+
+        <activity android:name=".UpdateStatusMessageActivity"
+            android:label="@string/title_update_status"
+            android:parentActivityName=".StatusMessageActivity">
+
+        </activity>
+
+        <activity android:name=".BotsActivity"
+            android:parentActivityName=".SettingActivity">
+
+        </activity>
+
+    </application>
+
+</manifest>

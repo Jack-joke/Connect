@@ -1,0 +1,1 @@
+<ImageView android:id="@+id/ivCustoview_Gridview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:height="@dimen/emoji_size" android:width="@dimen/emoji_size" android:background="@drawable/cc_emoji_selected_effect" android:padding="5dp" xmlns:android="http://schemas.android.com/apk/res/android" />
